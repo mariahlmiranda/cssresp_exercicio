@@ -1,3 +1,4 @@
+
 /* Estilos globais */
 * {
     margin: 0;
@@ -6,11 +7,18 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background: linear-gradient(to top, rgb(122, 89, 112), rgb(64, 44, 71)); /* Gradiente de fundo */
+body,
+#sobre-nos {
+    background-image: url('imagens/ceu.jpeg');
     min-height: 100vh;
     color: #333;
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa no fundo */
+    background-position: center; /* Centraliza a imagem */
 }
+
+
 
 /* Cabeçalho com imagem de fundo */
 .header-image {
@@ -22,7 +30,9 @@ body {
     color: #fff;
     text-align: center;
     overflow: hidden; /* Garante que nada extrapole o cabeçalho */
+    
 }
+
 
 /* Imagem de fundo */
 .header-image::before {
@@ -32,9 +42,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('imagens/gif.gif'); /* Caminho da sua imagem */
+    background-image: linear-gradient(rgba(56, 56, 56, 0.4), rgba(18,83,145, 1.000) 90% ), url('imagens/gif.gif'); /* Caminho da sua imagem */
     background-size: cover;
     background-position: center;
+    opacity: 15%;
     z-index: 1; /* Coloca a imagem atrás do conteúdo */
 }
 
@@ -46,7 +57,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(64, 44, 71, 0.8), rgba(64, 44, 71, 0.5)); /* Degradê */
     z-index: 2; /* Coloca o degradê acima da imagem */
 }
 
@@ -58,78 +68,158 @@ body {
 
 /* Estilo da navegação */
 nav {
-    background-color: rgb(64, 44, 71); /* Fundo da navegação */
+    background-color: rgb#fff; /* Fundo da navegação */
     padding: 10px; /* Espaçamento */
     text-align: center; /* Centraliza os links */
 }
 
+.header-content {
+    
+    padding: 50px;
+    text-align: left;
+    color: #9c9c9c;
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+  }
+
+.header-content h1 {
+    font-size: 44px;
+   margin-left: 100px;
+    font-family: "Petit Formal Script", cursive;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(27) forwards, cursor 0.5s step-end infinite alternate;
+    width: 0;
+    color: #fff;
+    text-shadow:
+    0 0 8px #add8e6, 
+    0 0 15px #add8e6;
+                }
+                
+                
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 50ch; }
+}
+
+
+
 nav ul {
-    display: flex;
-    justify-content: center; /* Centraliza a lista */
     list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px; /* Espaçamento entre os itens da lista */
-}
-
-.user-options {
     display: flex;
-    justify-content: center; /* Centraliza as opções do usuário */
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* User options */
+.user-options {
+    margin-right: 200px;
+    display: flex;
+    justify-content:flex;
+    align-items: center;
+}
+
+
+.user-options i {
+    margin-right: 8px;  /* Espaço entre o ícone e o texto */
+    color: #cccccc;     /* Cor do ícone */
+    font-size: 20px;    /* Tamanho do ícone */
 }
 
 .user-options a {
-    margin-left: 15px; /* Espaçamento entre os links */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333; /* Cor do texto */
+    font-size: 16px;
+    margin-right: 25px; /* Espaçamento entre os links */
+}
+
+.user-options i {
+    margin-right: 5px; /* Espaçamento entre ícone e texto */
 }
 
 /* Seções de produtos */
 .produtos {
     padding: 54px;
     text-align: center;
-    margin-top: 20px; /* Ajuste para ficar mais próximo do cabeçalho */
+    margin-top: 150px; /* Ajuste para ficar mais próximo do cabeçalho */
+    background-color: 	rgba(204,204,204,0.7);
+    border-radius: 30px;
+    max-width: 1280px;
+    margin-left: 350px;
+    margin-right: 350px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+   
 }
 
 .produtos h1 {
-    font-size: 80px;
-    margin-bottom: 24px;
-    font-family: "Imperial script", cursive;
+    font-size: 32px;
+    margin-bottom: 48px;
+    font-family: "Petit Formal Script", cursive;
     font-weight: 400;
-    color: #b99e53;
+    color: #e7e2d5;
 }
 
 .produtos p {
     font-size: 20px;
-    color: #8a8989;
+    color: #f3f3f3;
     margin-bottom: 54px;
     font-family: "Forum";
+    font-weight: normal;
+    flex-grow: 1; /* Faz com que o parágrafo preencha o espaço disponível */
+    min-height: 60px; /* Altura mínima para descrição */
+    overflow: hidden; /* Limita o texto ao espaço definido */
 }
 
 /* Grid de produtos */
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: block;
+    justify-content: center;
+    gap: 70px;
+    max-width: 100%;
+    
 }
 
 .product-card {
-    background-color: #fff;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    width: 250px;
+    height: 400px;
+    max-width: auto; /* Defina uma largura máxima */
+    margin: 10px; /* Espaço ao redor do card */
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+   
 }
 
 .product-card img {
     width: 200px;
     height: 200px;
-    margin-bottom: 15px;
-    margin-top: 15px;
     border-radius: 4px;
-    justify-content: center;
-    padding: 20px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
+
 
 .product-card h2 {
     font-size: 24px;
@@ -144,7 +234,7 @@ nav ul li {
 }
 
 .product-card p {
-    color: #999;
+    color: #333;
     font-size: 16px;
     margin-top: 12px;
     font-family: "Forum";
@@ -153,6 +243,243 @@ nav ul li {
 .product-card span {
     font-weight: bold;
     color: #333;
+}
+
+.separador{
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+#sobre-nos{
+    min-height: 50px;
+
+}
+/* Estilo da seção principal */
+.sobre {
+    
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.sobre h1 {
+    text-align: center;  /* Centraliza o título */
+    font-family: "Forum", sans-serif; /* Garante que a fonte "Forum" seja aplicada */
+    color: #dfcd9d; /* Define a cor desejada */
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 0px; /* Espaçamento entre o título e o conteúdo */
+}
+
+
+
+.sobre p{
+    color: #dad4d4;
+    font-weight: normal;
+}
+
+
+/* Estilo para imagem e parágrafo lado a lado */
+.conteudo {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Imagem com ajuste de altura */
+.conteudo img {
+    height: 400px;
+    width: auto;
+    border-radius: 8px;
+}
+
+/* Estilo para o parágrafo */
+.conteudo p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+
+/* Responsividade Tablet */
+@media screen and (min-width: 640px) and (max-width: 1920px) {
+    .header-image {
+        height: 200px;
+    }
+
+    .header-content {
+        max-width: 100%;
+        text-align: left;
+        padding: 20px;
+        
+    }
+
+    .header-content h1{
+    margin-left: 35px;
+    font-size: 36px;
+        
+    }
+    .user-options{
+        margin-right: 0;
+    }
+
+    .produtos {
+        margin: 0 auto;
+        padding: 22px;
+        max-width: 80%;
+        margin-top: 130px;
+    }
+
+    .produtos h1 {
+        margin-top: 24px;
+        margin-right: 24px;
+        margin-left: 24px;
+        font-size: 28px;
+    }
+
+    .produtos h3{
+        margin-bottom: 22px;
+    }
+
+    .product-card {
+        width: 50%;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conteudo img {
+        width: auto;
+        height: 300px;
+        margin-bottom: 50px;
+        margin-top: 70px;
+        
+    }
+
+    
+
+   
+}
+
+/* Responsividade Mobile */
+@media screen and (max-width: 641px) {
+   
+    
+    .header-content{
+        max-width: 100%;
+    }
+
+    .header-content h1{
+        margin-left: 10px;
+        font-size: 24px;
+    }
+
+    .header-image {
+        height: 150px;
+    }
+
+    .header-image h1 {
+        font-size: 28px;
+        margin: 10px;
+    }
+
+    .user-options {
+        flex-direction:row;
+        margin: 0;
+    }
+
+    .user-options a {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333; /* Cor do texto */
+        font-size: 16px;
+        margin-right: 20px; /* Espaçamento entre os links */
+    }
+    
+
+    .produtos {
+        padding: 22px;
+        max-width: 80%;
+        margin-top: 44px;
+    }
+
+    .produtos h1 {
+        margin-top: 24px;
+        margin-right: 24px;
+        margin-left: 24px;
+        font-size: 24px;
+    }
+
+
+    .produtos p{
+        margin-left: 24px;
+        margin-right:24px ;
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    .product-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .product-card {
+        width: 90%;
+        height: auto;
+        
+    }
+
+    .product-card p {
+        font-size: 16px;
+        margin-bottom: 16px;
+        
+    }
+
+    .product-card img {
+        width: 150px;
+        height: 150px;
+        
+    }
+
+    .conteudo {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 24px;
+    }
+
+   .conteudo h1{
+    margin-bottom: 20px;
+   }
+
+    .conteudo p {
+        max-width: 100%;
+        margin-top: 20px;
+        font-weight: normal;
+    }
+
+    .separador{
+        margin-top: 100px;
+        margin-bottom: 44px;
+    }
+
+    .conteudo img{
+    height: 300px;
+    width: auto;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    }
+
 }
 
 button {
@@ -167,4 +494,32 @@ button {
     border-radius: 4px;
     margin-bottom: 16px;
     margin-top: 8px;
+    transition: background-color 0.3s ease;
 }
+
+
+.slick-prev, .slick-next {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.slick-prev {
+    left: -35px; /* Ajuste a posição das setas conforme necessário */
+}
+
+.slick-next {
+    right: -35px;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: #555;
+}
+
+
