@@ -1,4 +1,3 @@
-
 /* Estilos globais */
 * {
     margin: 0;
@@ -18,6 +17,20 @@ body,
     background-position: center; /* Centraliza a imagem */
 }
 
+button {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    background-color: #292433;
+    color:#fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
 
 
 /* Cabeçalho com imagem de fundo */
@@ -29,7 +42,7 @@ body,
     justify-content: center;
     color: #fff;
     text-align: center;
-    overflow: hidden; /* Garante que nada extrapole o cabeçalho */
+    overflow: hidden; 
     
 }
 
@@ -45,9 +58,10 @@ body,
     background-image: linear-gradient(rgba(56, 56, 56, 0.4), rgba(18,83,145, 1.000) 90% ), url('imagens/gif.gif'); /* Caminho da sua imagem */
     background-size: cover;
     background-position: center;
-    opacity: 15%;
+    opacity: 0.15;
     z-index: 1; /* Coloca a imagem atrás do conteúdo */
 }
+
 
 /* Degradê */
 .header-image::after {
@@ -68,7 +82,7 @@ body,
 
 /* Estilo da navegação */
 nav {
-    background-color: rgb#fff; /* Fundo da navegação */
+    background-color: #fff; /* Fundo da navegação */
     padding: 10px; /* Espaçamento */
     text-align: center; /* Centraliza os links */
 }
@@ -85,18 +99,17 @@ nav {
 
 .header-content h1 {
     font-size: 44px;
-   margin-left: 100px;
+    margin-left: 100px;
     font-family: "Petit Formal Script", cursive;
     font-weight: normal;
     white-space: nowrap;
-    overflow: hidden;
     animation: typing 3.5s steps(27) forwards, cursor 0.5s step-end infinite alternate;
     width: 0;
     color: #fff;
     text-shadow:
     0 0 8px #add8e6, 
     0 0 15px #add8e6;
-                }
+    }
                 
                 
 
@@ -187,8 +200,8 @@ nav ul li a {
     gap: 70px;
     max-width: 100%;
     flex-wrap: wrap; /* Garante que os itens se ajustem em múltiplas linhas */
-        margin: 0 auto; /* Centraliza horizontalmente */
-        padding: 0 10px; /* Adicione um espaço interno, se necessário */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 10px; /* Adicione um espaço interno, se necessário */
     
 }
 
@@ -247,24 +260,22 @@ nav ul li a {
 
 .separador{
     margin-top: 200px;
-    
 }
 
 #sobre-nos{
     min-height: 50px;
-    
-
 }
 /* Estilo da seção principal */
 .sobre {
-    
     width: 100%;
     padding: 40px;
     text-align: center;
-    background-color: rgba(82, 103, 160, 0.4);
+    background-color: rgba(82, 103, 160, 0.4); 
+    display: flex;
+    gap: 40px;
 }
 
-.sobre h1 {
+.conteudo h1 {
     text-align: center;  /* Centraliza o título */
     font-family: "Forum", sans-serif; /* Garante que a fonte "Forum" seja aplicada */
     color: #dfcd9d; /* Define a cor desejada */
@@ -272,16 +283,12 @@ nav ul li a {
     font-weight: normal;
     margin-bottom: 0px; /* Espaçamento entre o título e o conteúdo */
     margin-top:40px;
-    
 }
-
-
 
 .sobre p{
     color: #dad4d4;
     font-weight: normal;
 }
-
 
 /* Estilo para imagem e parágrafo lado a lado */
 .conteudo {
@@ -289,16 +296,17 @@ nav ul li a {
     max-width: 1200px;
     margin: 0 auto;
     flex-direction: column;
-        align-items: center;
-        text-align: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* Imagem com ajuste de altura */
-.conteudo img {
+.sobre img {
     height: 400px;
     width: auto;
     border-radius: 8px;
     margin-top:40px;
+    display: flex;
 }
 
 /* Estilo para o parágrafo */
@@ -311,90 +319,8 @@ nav ul li a {
     margin-bottom: 40px;
 }
 
-
-/* Responsividade Tablet */
-@media screen and (min-width: 320px) and (max-width: 480px) {
-    .header-image {
-        height: 200px;
-    }
-
-    .header-content {
-        max-width: 100%;
-        text-align: left;
-        padding: 20px;
-        
-    }
-
-    .header-content h1{
-    margin-left: 35px;
-    font-size: 28px;
-        
-    }
-    .user-options{
-        margin-right: 0;
-    }
-
-    .product-grid {
-        display: grid; /* Troca o layout para grid */
-        grid-template-columns: repeat(1, 1fr); /* Cria duas colunas com tamanhos iguais */
-        gap: 20px; /* Espaçamento entre os itens */
-        justify-content: center; /* Centraliza o grid */
-        padding: 0 20px; /* Adiciona espaçamento interno */
-        justify-content: center;
-    }
-
-
-    .product-item {
-        flex: none; /* Remove qualquer configuração de flexbox */
-        margin: 0 auto; /* Centraliza os itens */
-        width: 100%; /* Faz com que os itens ocupem a largura da coluna */
-    }
-
-    .produtos {
-        margin: 0 auto;
-        padding: 22px;
-        max-width: 80%;
-        margin-top: 130px;
-        max-width: 1200px;
-    }
-
-    .produtos h1 {
-        margin-top: 24px;
-        margin-right: 24px;
-        margin-left: 24px;
-        font-size: 24px;
-    }
-
-    .produtos h3{
-        margin-bottom: 22px;
-    }
-
-    .product-card {
-        width: 100%;
-        margin: 0;
-        margin-right: 20px;
-    }
-
-    .conteudo {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .conteudo img {
-        width: 70%;
-        height: auto;
-        margin-bottom: 50px;
-        margin-top: 70px;
-        
-    }
-
-    
-}
-
-@media screen and (min-width: 481px) and (max-width: 720px) {
+@media screen and  (max-width: 640px) {
    
-    
     .header-image {
         height: 200px;
     }
@@ -403,13 +329,11 @@ nav ul li a {
         max-width: 100%;
         text-align: left;
         padding: 24px;
-        
     }
 
     .header-content h1{
-    margin-left: 10px;
-    font-size: 22px;
-        
+        margin-left: 10px;
+        font-size: 3vw;
     }
     .user-options{
         margin-right: 0;
@@ -474,21 +398,28 @@ nav ul li a {
         text-align: center;
     }
 
-    .conteudo img {
+    .sobre{
+        display: inline-block;
+    }
+
+    .sobre img {
         width: 80%;
         height: auto;
         margin-top: 70px;
+        display: inline-block;
+        align-items: center;
     }
 
 
-        .conteudo p{
-            margin-left: 30px;
-        }
+    .conteudo p{
+        width: 80%;
+        text-align: center;
+    }
         
     }
 
 
-    @media screen and (min-width: 721px) and (max-width: 1080px) {
+    @media screen and (min-width: 641px) and (max-width: 1023px) {
    
     
         .header-image {
@@ -503,9 +434,8 @@ nav ul li a {
         }
     
         .header-content h1{
-        margin-left: 35px;
-        font-size: 28px;
-            
+            margin-left: 35px;
+            font-size: 28px;
         }
         .user-options{
             margin-right: 0;
@@ -531,9 +461,17 @@ nav ul li a {
         }
     
         .product-card {
-            width: 50%;
+            width: 100%;
             margin: 0;
             margin-right: 20px;
+        }
+
+        .product-grid {
+            display: grid; /* Troca o layout para grid */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; /* Espaçamento entre os itens */
+            justify-content: center; /* Centraliza o grid */
+            padding: 0 20px; /* Adiciona espaçamento interno */
         }
     
         .conteudo {
@@ -541,149 +479,25 @@ nav ul li a {
             align-items: center;
             text-align: center;
         }
+
+        .sobre {
+            display: inline-block;
+        }
     
-        .conteudo img {
+        .sobre img {
             width: 80%;
             height: auto;
             margin-top: 70px;
+            display: inline-block;
         }
     
     
-            .conteudo p{
-                margin-left: 30px;
-            }
+        .conteudo p{
+            width: 80%;
+            text-align: center;
+        }
             
         }
     
-
-
-@media screen and (min-width: 1081px) and (max-width:1920px) {
-   
-
-    .carousel {
-        display: block; /* Mostra o carrossel */
-    }
-
-    .header-image {
-        height: 200px;
-    }
-
-    .header-content {
-        max-width: 100%;
-        text-align: left;
-        padding: 20px;
-        
-    }
-
-    .header-content h1{
-    margin-left: 35px;
-    font-size: 36px;
-        
-    }
-    .user-options{
-        margin-right: 0;
-    }
-
-    .product-grid {
-        display: grid; /* Troca o layout para grid */
-        grid-template-columns: repeat(2, 1fr); /* Cria duas colunas com tamanhos iguais */
-        gap: 20px; /* Espaçamento entre os itens */
-        justify-content: center; /* Centraliza o grid */
-        padding: 0 20px; /* Adiciona espaçamento interno */
-        justify-content: center;
-    }
-
-
-    .product-item {
-        flex: none; /* Remove qualquer configuração de flexbox */
-        margin: 0 auto; /* Centraliza os itens */
-        width: 100%; /* Faz com que os itens ocupem a largura da coluna */
-    }
-
-    .produtos {
-        margin: 0 auto;
-        padding: 22px;
-        max-width: 80%;
-        margin-top: 130px;
-        max-width: 1200px;
-    }
-
-    .produtos h1 {
-        margin-top: 24px;
-        margin-right: 24px;
-        margin-left: 24px;
-        font-size: 24px;
-    }
-
-    .produtos h3{
-        margin-bottom: 22px;
-    }
-
-    .product-card {
-        width: 100%;
-        margin: 0;
-        margin-right: 20px;
-    }
-
-    .conteudo {
-        flex-direction: column;
-        align-items: center;
-        text-align: center; 
-        margin-bottom: 50px;
-    }
-
-    .conteudo img {
-        width: 50%;
-        height: auto;
-        margin-bottom: 30px;
-        margin-top: 70px;
-        
-    }
-
-    .conteudo p{
-        margin-top: 0px;
-    }
-
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 8px 0;
-    border: none;
-    background-color: #292433;
-    color:#fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    margin-top: 8px;
-    transition: background-color 0.3s ease;
-}
-
-
-.slick-prev, .slick-next {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.slick-prev {
-    left: -35px; /* Ajuste a posição das setas conforme necessário */
-}
-
-.slick-next {
-    right: -35px;
-}
-
-.slick-prev:hover, .slick-next:hover {
-    background-color: #555;
-}
 
 
